@@ -1,0 +1,29 @@
+@model List<BookInSession.Models.BookViewModel>
+
+    <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">PublishYear</th>
+                <th scope="col">CategoryId</th>
+                <th scope="col"></th>
+                <th scope="col">
+                    <a class="btn btn-success btn-sm" asp-controller="Home" asp-action="Add" >
+                        Add A Book
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Name</td>
+                    <td>@book.Author</td>
+                    <td>@book.PublishYear</td>
+                    <td>@book.CategoryId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
